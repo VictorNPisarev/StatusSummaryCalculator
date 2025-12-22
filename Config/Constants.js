@@ -19,6 +19,15 @@ class Constants
       WORKSHOP: 'Участок',
       AMOUNT: 'Сумма'
     };
+
+    /*return {
+      // Поля в AppSheet
+      RowID: 'Row ID',
+      OrdersToDoId: 'OrdersToDoId',
+      OrderNumber: '№ Заказа',
+      StatusId: 'ProductionStatusId'
+    };*/
+
   }
 
   static get SCRIPT_PROPERTIES() 
