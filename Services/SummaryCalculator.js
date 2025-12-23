@@ -4,43 +4,50 @@ class SummaryCalculator
     calculate(orders) 
     {
         const groups = new Map();
-        let totalCount = 0;
-        let totalAmount = 0;
+        let totalWinAmount = 0;
+        let totalWinSqrt = 0;
+        let totalPlateAmount = 0;
+        let totalPlateSqrt = 0;
         
         orders.forEach(order => 
         {
-            const key = `${order.workshop}|${order.product}`;
+            const key = `${order.productionStatusId}`;
         
             if (!groups.has(key)) 
             {
                 groups.set(key, {
-                    workshop: order.workshop,
-                    product: order.product,
-                    count: 0,
-                    amount: 0
+                    productionStatusId: productionStatusId,
+                    winAmount: 0,
+                    winSqrt: 0,
+                    plateAmount: 0,
+                    plateSqrt: 0
                 });
             }
             
             const group = groups.get(key);
-            group.count++;
-            group.amount += order.amount;
+            group.winAmount += order.winAmount;
+            group.winSqrt += order.winSqrt;
+            group.plateAmount += order.plateAmount;
+            group.plateSqrt += order.plateSqrt;
             
-            totalCount++;
-            totalAmount += order.amount;
+            totalWinAmount += order.amount;
+            totalWinSqrt += order.winSqrt;
+            totalPlateAmount += order.plateAmount;
+            totalPlateSqrt += order.plateSqrt;
         });
         
         // Преобразуем Map в массив и сортируем
         const summary = Array.from(groups.values()).sort((a, b) => {
-            return a.workshop.localeCompare(b.workshop) || 
-                    a.product.localeCompare(b.product);
+            return a.productionStatusId.localeCompare(b.productionStatusId);
         });
         
         // Добавляем итоговую строку
         summary.push({
-            workshop: 'ИТОГО:',
-            product: '',
-            count: totalCount,
-            amount: totalAmount
+            productionStatusId: 'ИТОГО:',
+            winAmount: totalWinAmount,
+            winSqrt: totalWinSqrt,
+            plateAmount: totalPlateAmount,
+            plateSqrt: totalPlateSqrt
         });
         
         return summary;

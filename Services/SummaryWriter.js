@@ -20,13 +20,20 @@ class SummaryWriter
             return;
         }
         
-        const headers = [['ID', 'Дата', 'Тип изделия', 'Участок', 'Сумма']];
+        const headers = [['OrderToDoID', 'OrderInProductID', 'ProductionStatusId', '№ Заказа', 
+            'Окна, шт', 'Окна, м2', 'Щитовые, шт', 'Щитовые, м2', 'Готовность', 'Эконом', 'Рекламация']];
         const data = orders.map(order => [
             order.id,
+            order.orderInProductID,
+            order.productionStatusId,
+            order.name,
+            order.winAmount,
+            order.winSqrt,
+            order.plateAmount,
+            order.plateSqrt,
             order.date,
-            order.product,
-            order.workshop,
-            order.amount
+            order.econom,
+            order.claim
         ]);
         
         this.sheetsService.writeData(this.bufferSheetName, headers.concat(data));

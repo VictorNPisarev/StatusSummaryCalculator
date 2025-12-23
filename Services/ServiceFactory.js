@@ -26,7 +26,7 @@ class ServiceFactory
 
   static createOrdersFetcher(appSheetService) 
   {
-    const { APPSHEET_TABLE_NAME } = Constants.SCRIPT_PROPERTIES;
+    const { APPSHEET_TABLE_NAME } = Constants.SCRIPT_PROPERTIES();
     return new OrdersFetcher
     (
       appSheetService,

@@ -11,22 +11,26 @@ class Constants
 
   static get FIELD_MAPPINGS() 
   {
-    return {
+    /*return {
       // Поля в AppSheet
       ORDER_NUMBER: 'Номер заказа',
       READY_DATE: 'Дата готовности',
       PRODUCT_TYPE: 'Тип изделия',
       WORKSHOP: 'Участок',
       AMOUNT: 'Сумма'
-    };
+    };*/
 
-    /*return {
+    //OrdersToDo
+    return {
       // Поля в AppSheet
       RowID: 'Row ID',
-      OrdersToDoId: 'OrdersToDoId',
       OrderNumber: '№ Заказа',
-      StatusId: 'ProductionStatusId'
-    };*/
+      ReadyDate: 'Готовность',
+      WinAmount: 'Окна, шт',
+      WinSqrt: 'Окна, м2',
+      PlateAmount: 'Щитовые, шт',
+      PlateSqrt: 'Щитовые, м2'
+    };
 
   }
 
