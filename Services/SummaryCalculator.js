@@ -16,7 +16,7 @@ class SummaryCalculator
             if (!groups.has(key)) 
             {
                 groups.set(key, {
-                    productionStatusId: productionStatusId,
+                    productionStatusId: '111',//productionStatusId,
                     winAmount: 0,
                     winSqrt: 0,
                     plateAmount: 0,
@@ -25,15 +25,15 @@ class SummaryCalculator
             }
             
             const group = groups.get(key);
-            group.winAmount += order.winAmount;
-            group.winSqrt += order.winSqrt;
-            group.plateAmount += order.plateAmount;
-            group.plateSqrt += order.plateSqrt;
+            group.winAmount += Number(order.winAmount);
+            group.winSqrt += Number(order.winSqrt);
+            group.plateAmount += Number(order.plateAmount);
+            group.plateSqrt += Number(order.plateSqrt);
             
-            totalWinAmount += order.amount;
-            totalWinSqrt += order.winSqrt;
-            totalPlateAmount += order.plateAmount;
-            totalPlateSqrt += order.plateSqrt;
+            totalWinAmount += Number(order.winAmount);
+            totalWinSqrt += Number(order.winSqrt);
+            totalPlateAmount += Number(order.plateAmount);
+            totalPlateSqrt += Number(order.plateSqrt);
         });
         
         // Преобразуем Map в массив и сортируем

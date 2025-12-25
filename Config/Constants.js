@@ -14,7 +14,7 @@ class Constants
     /*return {
       // Поля в AppSheet
       ORDER_NUMBER: 'Номер заказа',
-      READY_DATE: 'Дата готовности',
+      READY_DATE: 'Готовность',
       PRODUCT_TYPE: 'Тип изделия',
       WORKSHOP: 'Участок',
       AMOUNT: 'Сумма'
@@ -29,7 +29,10 @@ class Constants
       WinAmount: 'Окна, шт',
       WinSqrt: 'Окна, м2',
       PlateAmount: 'Щитовые, шт',
-      PlateSqrt: 'Щитовые, м2'
+      PlateSqrt: 'Щитовые, м2',
+      Econom: 'Эконом',
+      Claim: 'Рекламация',
+      OnlyPayed: 'Оплачен. Не запущен'
     };
 
   }

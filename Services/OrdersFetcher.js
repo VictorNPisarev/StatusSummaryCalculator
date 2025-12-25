@@ -13,7 +13,7 @@ class OrdersFetcher
         const orders = await this.appSheetService.findOrdersByDateRange
         (
             this.tableName,
-            this.fieldMappings.READY_DATE,
+            this.fieldMappings.ReadyDate,
             period.from,
             period.to
         );
@@ -29,9 +29,8 @@ class OrdersFetcher
                 winSqrt: order[this.fieldMappings.WinSqrt],
                 plateAmount: order[this.fieldMappings.PlateAmount],
                 plateSqrt: order[this.fieldMappings.PlateSqrt],
-                econom: false,
-                claim: false,
-                amount: Number(order[this.fieldMappings.AMOUNT]) || 0
+                econom: order[this.fieldMappings.Econom].toLowerCase() === "true",
+                claim: order[this.fieldMappings.Claim].toLowerCase() === "true"
             }));
     }
 }

@@ -43,7 +43,7 @@ class SummaryOrchestrator
       this.writer.writeSummary(summary);
 
       // 6. Очищаем буфер
-      this.writer.clearBuffer();
+      //this.writer.clearBuffer();
 
       this.logger.info('Summary calculation completed successfully');
       

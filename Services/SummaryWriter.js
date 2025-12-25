@@ -41,12 +41,13 @@ class SummaryWriter
     
     writeSummary(summary) 
     {
-        const headers = [['Участок', 'Тип изделия', 'Кол-во', 'Сумма']];
+        const headers = [['Участок', 'Окна, шт', 'Окна, м2', 'Щитовые, шт', 'Щитовые, м2']];
         const data = summary.map(row => [
-            row.workshop,
-            row.product,
-            row.count,
-            row.amount
+            row.productionStatusId,
+            row.winAmount,
+            row.winSqrt,
+            row.plateAmount,
+            row.plateSqrt
         ]);
         
         this.sheetsService.writeData(this.summarySheetName, headers.concat(data));
